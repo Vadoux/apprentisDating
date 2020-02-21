@@ -54,8 +54,17 @@ form {
 
 	/* Enlève la bordure des boutons */
 	border:0;
-
+	outline:0;
+	
 	font-size:20px;
+}
+
+.interface-connexion input:focus {
+	outline:0;
+}
+
+::-webkit-input-placeholder {
+   color: lightgrey;
 }
 
 /*Bouton Log In*/
