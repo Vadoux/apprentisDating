@@ -12,7 +12,7 @@
 		<!-- Description qui apparait sous la forma d'un paragraphe dans les moteurs de recherches -->
 		<meta name="description" content="Planning en ligne de l'Apprentis Dating">
 		<link rel="icon" href="../img/favicon.ico">
-		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css2/style.css">
 	</head>
 
 	<body>
