@@ -21,10 +21,8 @@
 		<div class="interface-connexion">
 
 			<form method="POST" action="../modele/verif_co.php">
-				<input id="login type="text" name="login" placeholder="Login" />
-				<hr>
+				<input id="login" type="text" autocomplete="off" name="login" placeholder="Login" />
 		        <input id="mdp" type="password"  name="mdp"  placeholder="Password" />
-		        <hr>
 		        <input class='bouton-login' type="submit" value="LOG IN" name="login_submit">
 	    	</form>
 

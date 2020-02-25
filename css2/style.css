@@ -89,12 +89,13 @@ form {
 	background-color: #69043C90;
 }
 
-.interface-connexion hr {
-	color:white;
-	height: 0.5px;
-	background-color: white;
-	width: 180px;
-	border-style: inset;
+
+.interface-connexion input[type="text"],
+.interface-connexion input[type="password"] {
+	padding: 0 0 0.4em 0;
+	border-bottom: 2px solid white;
+	width: 9em;
+	-webkit-appearance:none;
 }
 
 @media only screen and (max-height: 900px) {
