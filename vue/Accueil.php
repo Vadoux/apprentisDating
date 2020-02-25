@@ -16,6 +16,9 @@
 	</head>
 
 	<body>
+
+	
+	
 		<img class="logo-uvsq" src="../img/logo-uvsq.jpg" alt="Logo UVSQ">
 		<h1 class="titre">Apprentis Dating</h1>
 		<div class="interface-connexion">
@@ -23,13 +26,20 @@
 			<form method="POST" action="../modele/verif_co.php">
 				<input id="login" type="text" autocomplete="off" name="login" placeholder="Login" />
 		        <input id="mdp" type="password"  name="mdp"  placeholder="Password" />
-		        <input class='bouton-login' type="submit" value="LOG IN" name="login_submit">
+		        	<?php
+						if (isset($_GET["err"])){
+							echo "<h3 class='message-erreur'>Votre login ou votre mot de passe est incorrect.</h3>";
+							echo "<input class='bouton-login-erreur' type='submit' value='LOG IN' name='login_submit'>";
+						}
+						else {
+							echo "<input class='bouton-login' type='submit' value='LOG IN' name='login_submit'>";
+						}
+					?>
+		        
 	    	</form>
-
 	    </div>
+	    
+
 	</body>
-
-
-
 </html>
 
