@@ -33,6 +33,13 @@ form {
 	margin-right: auto;
 }
 
+.message-erreur {
+	text-align: center;
+	color:  #ff9999;
+	font-size:15px;
+	margin:23px 0px;
+	font-family: calibri;
+}
 /*Bouton Login et Password*/
 .interface-connexion input {
 
@@ -68,7 +75,7 @@ form {
 }
 
 /*Bouton Log In*/
-.interface-connexion .bouton-login {
+input[type="submit"] {
 	background-color: #007ba4;
 	margin-top: 65px;
 	width: 262px;
@@ -77,24 +84,29 @@ form {
 	transition: all 0.10s;
 }
 
-.interface-connexion .bouton-login:hover {
+.interface-connexion .bouton-login-erreur {
+	margin-top: 0px;
+}
+
+.interface-connexion input[type="submit"]:hover {
 	background-color: rgb(105,4,60);
 }
 
-.interface-connexion .bouton-login:focus {
+.interface-connexion input[type="submit"]:focus {
 	background-color: rgb(105,4,60);
 }
 
-.interface-connexion .bouton-login:active {
+.interface-connexion input[type="submit"]:active {
 	background-color: #69043C90;
 }
 
-.interface-connexion hr {
-	color:white;
-	height: 0.5px;
-	background-color: white;
-	width: 180px;
-	border-style: inset;
+
+.interface-connexion input[type="text"],
+.interface-connexion input[type="password"] {
+	padding: 0 0 0.4em 0;
+	border-bottom: 2px solid white;
+	width: 9em;
+	-webkit-appearance:none;
 }
 
 @media only screen and (max-height: 900px) {
