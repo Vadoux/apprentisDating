@@ -66,13 +66,13 @@
 					}/*fin while*/
 			}
 		//recuperation du fichier csv du prof il est récupéré et placé dans le dossier uploadCSV
-		function upload($dossier, $extension, $NomFormulaire){
+		function upload($dossier, $extension, $NomFormulaire, $session){
 			$fichier = basename($_FILES[$NomFormulaire]['name']);
 			$taille_maxi = 100000;
 			$taille_maxiPDF = 40240000;
 			$taille = filesize($_FILES[$NomFormulaire]['tmp_name']);
 			$extensions = array($extension);
-			$extension = strrchr($_FILES[$NomFormulaire]['name'], '.'); 
+			$extension = strrchr($_FILES[$NomFormulaire]['name'], '.');
 			//Début des vérifications de sécurité...
 			if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
 				{
@@ -88,14 +88,20 @@
 				     $erreur = 'Le fichier est trop gros...';
 					}
 			}
-			
+
 			if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
 				{
 			     //On formate le nom du fichier ici...
-			     $fichier = strtr($fichier, 
-			          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-			          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-			     $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+				if ($extension == '.pdf'){
+					$fichier  = $session.'.pdf';
+				}
+				else{
+					$fichier = strtr($fichier,
+				          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
+				          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+				    $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+				}
+
 			     if(move_uploaded_file($_FILES[$NomFormulaire]['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
 			    	{
 			        echo 'Upload effectué avec succès !<br>';

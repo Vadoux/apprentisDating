@@ -22,7 +22,7 @@
 
 		<h2>Role</h2>
 		<INPUT TYPE='radio' NAME= 'role' VALUE='admin' CHECKED>Admin<br>
-		<INPUT TYPE='radio' NAME= 'role' VALUE='entreprise'>Entreprise<br>
+		<INPUT TYPE='radio' NAME= 'role' VALUE='entreprise'>Responsable<br>
 		<INPUT TYPE='radio' NAME= 'role' VALUE='etudiant'>Etudiant<br>
 
 		<input type='submit' name='ok' value='Créer'/>
