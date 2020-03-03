@@ -1,3 +1,8 @@
+body {
+	margin: 0px;
+
+}
+
 html[pageIndex] body {
 	margin: 0px;
 	color:white;
@@ -13,12 +18,110 @@ html[pageIndex] body {
 	margin: 37px;
 }
 
+html[pageEtudiant] .logo-uvsq {
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+}
+
 html[pageIndex] .titre {
 	margin-top: 150px;
 	font-weight: 900;
 	font-family: Roboto;
 	text-align: center;
 	font-size: 72px;
+}
+
+html[pageEtudiant] h1 {
+	display: inline-block;
+	position:relative;
+	text-align: center;
+	top:10px;
+	left:0;
+	width: 100%;
+	
+
+	letter-spacing: 0.15em;
+	font-size: 64px;
+	font-family: calibri;
+	font-style: normal;
+	color:#007ba4;
+}
+
+.entete-bouton {
+	display: inline-block;
+	position:absolute;
+	right:20px;
+	top:20px;
+}
+
+html[pageEtudiant] form {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+html[pageEtudiant] .form_deconnexion {
+	border: 1.5px solid #007ba4;
+	border-radius: 3px;
+	background-color: #007ba4;
+	transition: all 0.15s;
+}
+
+html[pageEtudiant] .form_depot_cv {
+	border: 1.5px solid #68043A;
+	border-radius: 3px;
+	transition: all 0.15s;
+}
+html[pageEtudiant] input {
+	
+	font-size: 18px;
+	font-weight: 700;
+	border:0;
+	outline:0;
+	transition: all 0.15s;
+	
+}
+
+html[pageEtudiant] .bouton_deconnexion {
+	height: 33px;
+	background-color: #007ba4;
+	color:white;
+	padding-right: 0;
+}
+
+html[pageEtudiant] .form_deconnexion:hover {
+	background-color: white;
+}
+.form_deconnexion:hover .bouton_deconnexion{
+	background-color: white;
+	color:#007ba4;
+}
+
+.form_deconnexion:focus .bouton_deconnexion{
+	background-color: white;
+	color:#007ba4;
+}
+
+
+.bouton_depot_cv {
+	height: 33px;
+	color:white;
+	background-color: #68043A;
+	padding:0px 10px;
+}
+
+.bouton_depot_cv:hover,.bouton_depot_cv:focus {
+	background-color: white;
+	color: #68043A;
+}
+
+.icone-deconnexion {
+	display: inline;
+	float:right;
+	margin:4px 0px;
+	height: 25px;
+	width:25px;
 }
 
 .interface-connexion {
@@ -40,6 +143,7 @@ form {
 	margin:23px 0px;
 	font-family: calibri;
 }
+
 /*Bouton Login et Password*/
 .interface-connexion input {
 
@@ -75,7 +179,7 @@ form {
 }
 
 /*Bouton Log In*/
-input[type="submit"] {
+html[pageIndex] .bouton-login {
 	background-color: #007ba4;
 	margin-top: 65px;
 	width: 262px;
@@ -84,8 +188,13 @@ input[type="submit"] {
 	transition: all 0.10s;
 }
 
-.interface-connexion .bouton-login-erreur {
+html[pageIndex] .bouton-login-erreur {
+	background-color: #007ba4;
 	margin-top: 0px;
+	width: 262px;
+	height: 84px;
+	font-size: 30px;
+	transition: all 0.10s;
 }
 
 .interface-connexion input[type="submit"]:hover {
@@ -112,5 +221,19 @@ input[type="submit"] {
 @media only screen and (max-height: 900px) {
 	html[pageIndex] .titre {
 		margin-top: 0px;
+	}
+
+
+}
+
+@media only screen and (max-width: 1140px) {
+
+	.logo-centrer {
+		text-align: center;
+	}
+	html[pageEtudiant] .logo-uvsq {
+		display: inline;
+		position: static;
+		margin-top:0;
 	}
 }

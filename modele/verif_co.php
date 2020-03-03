@@ -20,7 +20,7 @@
 				if($ligne[1] == 'etudiant') {
 					session_start();
 					$_SESSION['login']=$login;
-					header("Location:../vue/monCompte.php");
+					header("Location:../vue/page_etudiant.php");
 					exit(0);
 				}//fin if verification role
 				else if($ligne[1] == 'admin'){
