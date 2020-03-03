@@ -12,7 +12,7 @@
 	session_start();
 	if (isset($_SESSION['login'])){//si la variable de session existe (connecté) le programme s'excute, sinon on retourne sur page de connection
 
-		$fichier = upload('../uploadCSV/','.csv','avatar');
+		$fichier = upload('../uploadCSV/','.csv','avatar',$_SESSION['login']);
 		gestionComptesEtudiants($fichier, ";");
 	}
 	else{

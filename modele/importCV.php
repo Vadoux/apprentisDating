@@ -5,7 +5,7 @@
 	/*protection face a l'accès par lien lorsque la personne n'est pas connecté en tant que user admin ou etudiant*/
 	session_start();
 	if (isset($_SESSION['login'])){//si la variable de session existe (connecté) le programme s'excute, sinon on retourne sur page de connection
-		$fichier = upload('../uploadCV/','.pdf','exportPDF');
+		$fichier = upload('../uploadCV/','.pdf','exportPDF',$_SESSION['login']);
 	}//fin if protection
 	else{
 		header('location:../index.php');

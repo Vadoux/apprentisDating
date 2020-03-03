@@ -118,7 +118,7 @@
 				}
 		}
 
-		function ajoutUserBD($login, $mdp, $role, $formation){
+		function ajoutUserBD($login, $mdp, $role){
 			$connexion = connexionBD("localhost","root","","test2");
 
 			$MdpChiff = cryptageMdp($mdp);
@@ -128,8 +128,8 @@
 			$reqPrepareCpt = mysqli_prepare($connexion,$reqInsertCpt);
 
 			/*Préparation de la requete d'insertion des valeurs dans la table etudiant*/
-			$reqInsertEt="INSERT into etudiant (NumeroEt, Formation)";
-			$reqInsertEt.="VALUES(?,?)";
+			$reqInsertEt="INSERT into etudiant (NumeroEt)";
+			$reqInsertEt.="VALUES(?)";
 			$reqPrepareEt = mysqli_prepare($connexion,$reqInsertEt);
 			/*Préparation de la requete d'insertion des valeurs dans la table etudiant*/
 
@@ -142,7 +142,7 @@
 			mysqli_stmt_bind_param($reqPrepareCpt,'sss',$login , $MdpChiff, $role);
 			mysqli_stmt_execute($reqPrepareCpt);
 
-			mysqli_stmt_bind_param($reqPrepareEt,'ss',$login , $formation);
+			mysqli_stmt_bind_param($reqPrepareEt,'s',$login);
 			mysqli_stmt_execute($reqPrepareEt);
 
 			mysqli_stmt_bind_param($reqPreparePers,'s',$login);
